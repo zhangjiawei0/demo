@@ -6,27 +6,71 @@
   width: 100%;
   color: #fff;
   text-align: center;
+  margin:0 auto;
+  overflow:hidden;
+  -webkit-backface-visibility:hidden;
+  -moz-backface-visibility:hidden;
+  -ms-backface-visibility:hidden;
+  -o-backface-visibility:hidden;
+  backface-visibility:hidden;
+  z-index:1;
 }
-@-webkit-keyframes passdown {
+.swiper-wrapper {
+  width:100%;
+  -webkit-transition-property:-webkit-transform, left, top;
+  -webkit-transition-duration:0s;
+  -webkit-transform:translate3d(0px,0,0);
+  -webkit-transition-timing-function:ease;
+
+  -moz-transition-property:-moz-transform, left, top;
+  -moz-transition-duration:0s;
+  -moz-transform:translate3d(0px,0,0);
+  -moz-transition-timing-function:ease;
+
+  -o-transition-property:-o-transform, left, top;
+  -o-transition-duration:0s;
+  -o-transform:translate3d(0px,0,0);
+  -o-transition-timing-function:ease;
+  -o-transform:translate(0px,0px);
+
+  -ms-transition-property:-ms-transform, left, top;
+  -ms-transition-duration:0s;
+  -ms-transform:translate3d(0px,0,0);
+  -ms-transition-timing-function:ease;
+
+  transition-property:transform, left, top;
+  transition-duration:0s;
+  transform:translate3d(0px,0,0);
+  transition-timing-function:ease;
+}
+.swiper-slide {
+  float: left;
+  width: 100%;
+    height: 100%;
+    background-position:center;
+    background-size: cover;
+    position: relative;
+}
+@-webkit-keyframes slide{
   0% {opacity: 0;transform: translate(0,10px);}
   30% {opacity: 0.5;transform: translate(0,5px);}
   60% {opacity: 1;transform: translate(0,0);}
   100% {opacity: 0;transform: translate(0,-5px);}
 }
-.pub-passdown{
+.slide-btn{
   position: absolute;
   width: 10%;
   left: 45%;
   bottom: 4%;
-  -webkit-animation: passdown 1.8s ease-in-out infinite;
-  -moz-animation: passdown 1.8s ease-in-out infinite;
-  -o-animation: passdown 1.8s ease-in-out infinite;
-  animation: passdown 1.8s ease-in-out infinite;
+  -webkit-animation: slide 1.8s ease-in-out infinite;
+  -moz-animation: slide 1.8s ease-in-out infinite;
+  -o-animation: slide 1.8s ease-in-out infinite;
+  animation: slide 1.8s ease-in-out infinite;
 }
-.pub-passdown img{
+.slide-btn img{
   width: 100%;
 }
-.autiobtn {
+.audio{
   position: absolute;
   display: inline-block;
   right: 20px;
@@ -39,11 +83,11 @@
   background-size: 80px auto;
   background-repeat: no-repeat;
 }
-@-webkit-keyframes rotating {
+@-webkit-keyframes rotating{
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-.rotate {
+.play{
     -webkit-animation: rotating 1.2s linear infinite;
     -moz-animation: rotating 1.2s linear infinite;
     -o-animation: rotating 1.2s linear infinite;
