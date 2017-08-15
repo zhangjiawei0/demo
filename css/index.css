@@ -93,3 +93,6 @@
     -o-animation: rotating 1.2s linear infinite;
     animation: rotating 1.2s linear infinite;
 }
+#can{
+  cursor: pointer;
+}

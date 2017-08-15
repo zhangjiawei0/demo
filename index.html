@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/index.css">
   <script src="js/swiper.min.js"></script>
   <script src="js/jquery.min.js"></script>
+  <script src="js/Lottery.js"></script>
   <script src="js/index.js"></script>
 </head>
 <body>
@@ -52,8 +53,8 @@
       <div class="swiper-slide" data-url="url(images/B11.gif)">
       </div>
       
-      <div class="swiper-slide" data-url="url(images/B13N.jpg)">
-        <canvas id="myCanvas"></canvas>
+      <div id="can" class="swiper-slide" data-url="url(images/B13N.jpg)">
+        <!-- <canvas id="myCanvas"></canvas> -->
       </div>
     </div>
   </div>
@@ -61,5 +62,17 @@
   <div class="play audio">
     <audio src="audio/music.mp3" id="media" autoplay loop preload></audio>
   </div>
+  <script>
+    var lottery = new Lottery('can', 'images/B12.jpg', 'image',document.documentElement.clientWidth, document.documentElement.clientHeight, drawPercentCallback);
+
+    lottery.init('images/B13N.jpg','image');
+
+    function drawPercentCallback(percent) {
+      if(Math.floor(percent) === 25){
+        console.log(percent)
+        document.getElementsByTagName('canvas')[1].style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
